@@ -68,12 +68,12 @@ beta_travel_time_4 = Beta('beta_travel_time_4', 0, None, None, 0)
 # socioeconomic characteristic: purpose 
 purpose = Variable('purpose')
 
-purpose_segmentation = DiscreteSegmentationTuple(variable=purpose, mapping={1: 'home-based work',2: 'home-based education', 3: 'home-based other',4: 'employers business', 5: 'non-homebased other'})
+new_purpose_segmentation = DiscreteSegmentationTuple(variable=purpose, mapping={1: 'work-education-related',2: 'work-education-related', 3: 'non-work-education-related',4: 'work-education-related', 5: 'non-work-education-related'})
 
-segmented_b_time = segmented_beta(beta_travel_time, [purpose_segmentation])
-segmented_b_time_2 = segmented_beta(beta_travel_time_2, [purpose_segmentation])
-segmented_b_time_3 = segmented_beta(beta_travel_time_3, [purpose_segmentation])
-segmented_b_time_4 = segmented_beta(beta_travel_time_4, [purpose_segmentation])
+segmented_b_time = segmented_beta(beta_travel_time, [new_purpose_segmentation])
+segmented_b_time_2 = segmented_beta(beta_travel_time_2, [new_purpose_segmentation])
+segmented_b_time_3 = segmented_beta(beta_travel_time_3, [new_purpose_segmentation])
+segmented_b_time_4 = segmented_beta(beta_travel_time_4, [new_purpose_segmentation])
 
 #Box-COx transformation of traveltime variables
 
